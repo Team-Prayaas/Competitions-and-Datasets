@@ -1,0 +1,244 @@
+Call:
+rpart(formula = credit_amount ~ ., data = train)
+  n= 560 
+
+           CP nsplit rel error    xerror       xstd
+1  0.30853828      0 1.0000000 1.0031939 0.09986918
+2  0.05455445      1 0.6914617 0.6994971 0.07631735
+3  0.04271524      2 0.6369073 0.6947132 0.07468316
+4  0.02784537      3 0.5941920 0.6833224 0.07430600
+5  0.02726904      4 0.5663467 0.6833651 0.07587186
+6  0.02589387      5 0.5390776 0.6976464 0.07734016
+7  0.02546667      6 0.5131837 0.6953108 0.07744359
+8  0.02462778      7 0.4877171 0.6922546 0.07743650
+9  0.02268968      9 0.4384615 0.6896132 0.07742451
+10 0.01311089     10 0.4157718 0.6362282 0.07303367
+11 0.01160094     11 0.4026609 0.6250763 0.07118202
+12 0.01000000     12 0.3910600 0.6436688 0.07208066
+
+Variable importance
+  duration_month          purpose              poi         job_type              age 
+              48               10               10                8                4 
+   employment_st   credit_history    serial.number     account_info    property_type 
+               4                4                3                3                2 
+ savings_account     housing_type       credits_no installment_type  personal_status 
+               1                1                1                1                1 
+
+Node number 1: 560 observations,    complexity param=0.3085383
+  mean=3200.991, MSE=7659194 
+  left son=2 (435 obs) right son=3 (125 obs)
+  Primary splits:
+      duration_month < 25    to the left,   improve=0.30853830, (0 missing)
+      purpose        splits as  LRRLLLLLLR, improve=0.09621866, (0 missing)
+      property_type  splits as  LLLR,       improve=0.09495056, (0 missing)
+      job_type       splits as  LLLR,       improve=0.09194555, (0 missing)
+      poi            < 3.5   to the right,  improve=0.07945258, (0 missing)
+
+Node number 2: 435 observations,    complexity param=0.04271524
+  mean=2376.936, MSE=3760566 
+  left son=4 (379 obs) right son=5 (56 obs)
+  Primary splits:
+      job_type       splits as  LLLR,       improve=0.11199830, (0 missing)
+      duration_month < 17    to the left,   improve=0.10430920, (0 missing)
+      poi            < 3.5   to the right,  improve=0.10092090, (0 missing)
+      purpose        splits as  LRRLLLLLLL, improve=0.08550819, (0 missing)
+      telephone      splits as  LR,         improve=0.08147878, (0 missing)
+  Surrogate splits:
+      employment_st splits as  RLLLL,      agree=0.883, adj=0.089, (0 split)
+      age           < 69    to the left,   agree=0.878, adj=0.054, (0 split)
+      purpose       splits as  LLRLLLLLLL, agree=0.874, adj=0.018, (0 split)
+
+Node number 3: 125 observations,    complexity param=0.05455445
+  mean=6068.704, MSE=1.063949e+07 
+  left son=6 (59 obs) right son=7 (66 obs)
+  Primary splits:
+      poi            < 3.5   to the right,  improve=0.17594250, (0 missing)
+      duration_month < 46    to the left,   improve=0.15629080, (0 missing)
+      property_type  splits as  LLLR,       improve=0.09581190, (0 missing)
+      telephone      splits as  LR,         improve=0.09328455, (0 missing)
+      purpose        splits as  RRRLL-LR-R, improve=0.07967306, (0 missing)
+  Surrogate splits:
+      purpose        splits as  LRRRL-LR-R, agree=0.672, adj=0.305, (0 split)
+      employment_st  splits as  LRRRL,      agree=0.640, adj=0.237, (0 split)
+      duration_month < 46    to the left,   agree=0.600, adj=0.153, (0 split)
+      credits_no     < 1.5   to the left,   agree=0.592, adj=0.136, (0 split)
+      credit_history splits as  RLLRR,      agree=0.576, adj=0.102, (0 split)
+
+Node number 4: 379 observations,    complexity param=0.02784537
+  mean=2127.472, MSE=2428836 
+  left son=8 (179 obs) right son=9 (200 obs)
+  Primary splits:
+      poi            < 3.5   to the right,  improve=0.12974390, (0 missing)
+      duration_month < 17    to the left,   improve=0.10657370, (0 missing)
+      property_type  splits as  LRRR,       improve=0.05005490, (0 missing)
+      purpose        splits as  LRLRLLLLLR, improve=0.04343198, (0 missing)
+      telephone      splits as  LR,         improve=0.03491122, (0 missing)
+  Surrogate splits:
+      purpose         splits as  LRRRLLRLLR, agree=0.602, adj=0.156, (0 split)
+      credit_history  splits as  RLRRL,      agree=0.580, adj=0.112, (0 split)
+      duration_month  < 21.5  to the right,  agree=0.578, adj=0.106, (0 split)
+      savings_account splits as  RRRRL,      agree=0.575, adj=0.101, (0 split)
+      employment_st   splits as  RRRRL,      agree=0.575, adj=0.101, (0 split)
+
+Node number 5: 56 observations,    complexity param=0.02462778
+  mean=4065.268, MSE=9501886 
+  left son=10 (36 obs) right son=11 (20 obs)
+  Primary splits:
+      account_info   splits as  LRLL,       improve=0.1960242, (0 missing)
+      duration_month < 13    to the left,   improve=0.1846334, (0 missing)
+      purpose        splits as  LRRLL--LLL, improve=0.1373686, (0 missing)
+      poi            < 2.5   to the right,  improve=0.1113252, (0 missing)
+      age            < 35.5  to the left,   improve=0.1100575, (0 missing)
+  Surrogate splits:
+      credit_history splits as  -RLRL,      agree=0.732, adj=0.25, (0 split)
+      purpose        splits as  LLRLL--RLL, agree=0.696, adj=0.15, (0 split)
+      gurantors      splits as  LRL,        agree=0.696, adj=0.15, (0 split)
+      serial.number  < 459.5 to the left,   agree=0.679, adj=0.10, (0 split)
+      age            < 66.5  to the left,   agree=0.661, adj=0.05, (0 split)
+
+Node number 6: 59 observations,    complexity param=0.02546667
+  mean=4621.627, MSE=7280910 
+  left son=12 (37 obs) right son=13 (22 obs)
+  Primary splits:
+      job_type        splits as  LRLR,       improve=0.25427610, (0 missing)
+      purpose         splits as  RR-LL-LL-L, improve=0.12992550, (0 missing)
+      savings_account splits as  LRLLR,      improve=0.11645500, (0 missing)
+      resident_since  < 3.5   to the right,  improve=0.11546300, (0 missing)
+      telephone       splits as  LR,         improve=0.09660419, (0 missing)
+  Surrogate splits:
+      employment_st  splits as  RRLLL,     agree=0.729, adj=0.273, (0 split)
+      property_type  splits as  LLLR,      agree=0.729, adj=0.273, (0 split)
+      serial.number  < 46    to the right, agree=0.695, adj=0.182, (0 split)
+      housing_type   splits as  LLR,       agree=0.678, adj=0.136, (0 split)
+      duration_month < 43.5  to the left,  agree=0.661, adj=0.091, (0 split)
+
+Node number 7: 66 observations,    complexity param=0.02726904
+  mean=7362.303, MSE=1.009651e+07 
+  left son=14 (37 obs) right son=15 (29 obs)
+  Primary splits:
+      duration_month  < 37.5  to the left,  improve=0.17551960, (0 missing)
+      age             < 46.5  to the left,  improve=0.14757840, (0 missing)
+      property_type   splits as  LLLR,      improve=0.13021370, (0 missing)
+      savings_account splits as  LRLRL,     improve=0.10948140, (0 missing)
+      account_info    splits as  LRLR,      improve=0.08861238, (0 missing)
+  Surrogate splits:
+      property_type    splits as  RLLR,       agree=0.682, adj=0.276, (0 split)
+      purpose          splits as  RLRLR-LL-L, agree=0.667, adj=0.241, (0 split)
+      installment_type splits as  RLL,        agree=0.652, adj=0.207, (0 split)
+      savings_account  splits as  LRLLR,      agree=0.636, adj=0.172, (0 split)
+      age              < 51.5  to the left,   agree=0.636, adj=0.172, (0 split)
+
+Node number 8: 179 observations
+  mean=1534.095, MSE=887583 
+
+Node number 9: 200 observations,    complexity param=0.02589387
+  mean=2658.545, MSE=3211092 
+  left son=18 (132 obs) right son=19 (68 obs)
+  Primary splits:
+      duration_month  < 17    to the left,   improve=0.17293600, (0 missing)
+      property_type   splits as  LRRR,       improve=0.08099797, (0 missing)
+      savings_account splits as  LLLLR,      improve=0.04472853, (0 missing)
+      purpose         splits as  LRLLLLLRLL, improve=0.03626280, (0 missing)
+      telephone       splits as  LR,         improve=0.03211150, (0 missing)
+  Surrogate splits:
+      serial.number  < 520   to the left,   agree=0.690, adj=0.088, (0 split)
+      credit_history splits as  RLLLL,      agree=0.685, adj=0.074, (0 split)
+      purpose        splits as  LLRLLLLRLL, agree=0.675, adj=0.044, (0 split)
+
+Node number 10: 36 observations
+  mean=3048.028, MSE=3854208 
+
+Node number 11: 20 observations,    complexity param=0.02462778
+  mean=5896.3, MSE=1.445243e+07 
+  left son=22 (9 obs) right son=23 (11 obs)
+  Primary splits:
+      duration_month < 13.5  to the left,   improve=0.3700376, (0 missing)
+      purpose        splits as  LRRLL--L-L, improve=0.3545192, (0 missing)
+      housing_type   splits as  RLR,        improve=0.1439412, (0 missing)
+      property_type  splits as  LLRR,       improve=0.1404902, (0 missing)
+      credit_history splits as  -LRLL,      improve=0.1062877, (0 missing)
+  Surrogate splits:
+      purpose         splits as  LRRRL--L-R, agree=0.80, adj=0.556, (0 split)
+      age             < 45.5  to the right,  agree=0.80, adj=0.556, (0 split)
+      serial.number   < 447.5 to the right,  agree=0.65, adj=0.222, (0 split)
+      credit_history  splits as  -RRRL,      agree=0.60, adj=0.111, (0 split)
+      savings_account splits as  RRL-R,      agree=0.60, adj=0.111, (0 split)
+
+Node number 12: 37 observations
+  mean=3572.432, MSE=2353786 
+
+Node number 13: 22 observations,    complexity param=0.02268968
+  mean=6386.182, MSE=1.060242e+07 
+  left son=26 (10 obs) right son=27 (12 obs)
+  Primary splits:
+      purpose         splits as  RR-RL--L-L, improve=0.41722640, (0 missing)
+      serial.number   < 243.5 to the left,   improve=0.40905850, (0 missing)
+      credit_history  splits as  LRRLL,      improve=0.12763160, (0 missing)
+      savings_account splits as  LRL-R,      improve=0.12281360, (0 missing)
+      housing_type    splits as  RLR,        improve=0.09044689, (0 missing)
+  Surrogate splits:
+      serial.number   < 243.5 to the left,  agree=0.727, adj=0.4, (0 split)
+      credit_history  splits as  LRRLR,     agree=0.727, adj=0.4, (0 split)
+      employment_st   splits as  RRRLL,     agree=0.682, adj=0.3, (0 split)
+      personal_status splits as  LRLR,      agree=0.636, adj=0.2, (0 split)
+      age             < 59.5  to the right, agree=0.636, adj=0.2, (0 split)
+
+Node number 14: 37 observations,    complexity param=0.01311089
+  mean=6183.757, MSE=7344054 
+  left son=28 (20 obs) right son=29 (17 obs)
+  Primary splits:
+      purpose       splits as  LR-LL-RR-L, improve=0.20695010, (0 missing)
+      property_type splits as  LLRR,       improve=0.19003010, (0 missing)
+      employment_st splits as  LRLLL,      improve=0.13970760, (0 missing)
+      serial.number < 103.5 to the right,  improve=0.11701840, (0 missing)
+      housing_type  splits as  RLR,        improve=0.09283922, (0 missing)
+  Surrogate splits:
+      housing_type   splits as  RLR,       agree=0.703, adj=0.353, (0 split)
+      property_type  splits as  LLRR,      agree=0.676, adj=0.294, (0 split)
+      credit_history splits as  L-RLL,     agree=0.649, adj=0.235, (0 split)
+      age            < 29    to the left,  agree=0.649, adj=0.235, (0 split)
+      serial.number  < 55    to the right, agree=0.622, adj=0.176, (0 split)
+
+Node number 15: 29 observations,    complexity param=0.01160094
+  mean=8865.966, MSE=9575135 
+  left son=30 (22 obs) right son=31 (7 obs)
+  Primary splits:
+      duration_month  < 51    to the left,  improve=0.1791931, (0 missing)
+      telephone       splits as  LR,        improve=0.1530236, (0 missing)
+      savings_account splits as  LRRRL,     improve=0.1502408, (0 missing)
+      age             < 42.5  to the left,  improve=0.1403359, (0 missing)
+      account_info    splits as  LR-R,      improve=0.1356464, (0 missing)
+  Surrogate splits:
+      age           < 55.5  to the left,  agree=0.897, adj=0.571, (0 split)
+      employment_st splits as  LLLLR,     agree=0.793, adj=0.143, (0 split)
+
+Node number 18: 132 observations
+  mean=2123.689, MSE=2509918 
+
+Node number 19: 68 observations
+  mean=3696.794, MSE=2938921 
+
+Node number 22: 9 observations
+  mean=3339.667, MSE=4942255 
+
+Node number 23: 11 observations
+  mean=7988.091, MSE=1.250995e+07 
+
+Node number 26: 10 observations
+  mean=4082.2, MSE=4004169 
+
+Node number 27: 12 observations
+  mean=8306.167, MSE=7991012 
+
+Node number 28: 20 observations
+  mean=5047.15, MSE=4890721 
+
+Node number 29: 17 observations
+  mean=7520.941, MSE=6922414 
+
+Node number 30: 22 observations
+  mean=8127.091, MSE=6748547 
+
+Node number 31: 7 observations
+  mean=11188.14, MSE=1.135039e+07 
+
